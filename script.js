@@ -2,24 +2,24 @@ document.getElementById('check-btn').
 
 addEventListener('click', function() {
     const input = document.getElementById('text-input').value;
-    const resultElement = document.getElementById('result');
+    const result = document.getElementById('result');
 
     if (!input) {
         alert('Please input a value');
         return;
     }
 
-    const sanitizedInput = input
+    const clean = input
         .toLowerCase()
         .replace(/[^a-z0-9]/g, '');
 
-    const isPalindrome = sanitizedInput === sanitizedInput.split('').reverse().join('');
+    const isPalindrome = clean === clean.split('').reverse().join('');
 
     if (isPalindrome) {
-        resultElement.textContent = `${input} is a palindrome`;
+        result.textContent = `${input} is a palindrome`;
     } 
     
     else {
-        resultElement.textContent = `${input} is not a palindrome`;
+        result.textContent = `${input} is not a palindrome`;
     }
 });
